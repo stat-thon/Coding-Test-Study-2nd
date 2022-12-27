@@ -23,3 +23,10 @@ else:
     frontnum = list(map(int, front.split('+')))
     
     print(sum(frontnum) - sum(backnum))
+
+    
+##### check this memory
+# my memory and time
+# 30748KB 36ms
+# first grade memory and time
+# 30616KB 36ms
