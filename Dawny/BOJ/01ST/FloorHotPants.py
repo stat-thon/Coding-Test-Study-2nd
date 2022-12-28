@@ -49,3 +49,9 @@ for i in range(v):
             dfs2(i, j)
 
 print(k)
+
+##### check this memory
+# my memory and time
+# 30616KB 36ms
+# first grade memory and time
+# 30616KB 36ms
