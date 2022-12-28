@@ -30,3 +30,40 @@ else:
 # 30748KB 36ms
 # first grade memory and time
 # 30616KB 36ms
+
+######################### second #########################
+
+# input
+str = input()
+
+# answer
+num = 0
+
+# temp number
+n = '0'
+
+# plus change minus
+change = 0
+
+# rolling for
+for i in str+"+l":
+    if i.isnumeric():
+        n += i
+
+    elif i == "l":
+        break
+
+    else:
+        num += int(n)*((-1)**change)
+        n = '0'
+
+    if i == "-":
+        change = 1
+
+print(num)
+
+##### check this memory
+# my memory and time
+# 30616KB 36ms
+# first grade memory and time
+# 30616KB 36ms
