@@ -1,3 +1,7 @@
+# set recursion limit
+import sys
+sys.setrecursionlimit(10**6)
+
 # Input
 n, m = map(int, input().split())
 graph = []
