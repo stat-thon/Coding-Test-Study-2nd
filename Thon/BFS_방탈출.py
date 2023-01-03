@@ -18,11 +18,13 @@ def bfs(start_x, start_y):
     dx = [1, -1, 0, 0]
     dy = [0, 0, 1, -1]
 
+    start_num = graph[start_x][start_y]
+
     # 흔한 bfs 경로 찾는 문제인데 break없이 제일 먼 좌표까지 가도록 둠
     # 그래야 시작점으로부터 가장 길이가 긴 최단경로에 해당하는 끝점 찾을 수 있음
     while dq:
         
-        x, y, cnt, graph_sum = dq.popleft()
+        x, y, dist, password = dq.popleft()
 
         for d in range(4):
             nx = x + dx[d]
@@ -32,9 +34,9 @@ def bfs(start_x, start_y):
                 if visited[nx][ny] == 0:
                     if graph[nx][ny] != 0:
                         visited[nx][ny] = 1
-                        dq.append((nx, ny, cnt + 1, graph[start_x][start_y] + graph[nx][ny]))
+                        dq.append((nx, ny, dist + 1, start_num + graph[nx][ny]))
         
-    return cnt, graph_sum
+    return dist, password
 
 # 출발 가능한 시작점 좌표만 저장
 coor_list = [(i, j) for i in range(n) for j in range(m) if graph[i][j] != 0]
@@ -45,13 +47,15 @@ password = 0
 
 for coor in coor_list:
     start_x, start_y = coor
-    cnt, pw = bfs(start_x, start_y)
-
-    if cnt > MAX_dist:
-        MAX_dist = max(cnt, MAX_dist)
+    dist, pw = bfs(start_x, start_y)
+    
+    # 지금 최단거리가 이전에 계산된 최단거리보다 길면 패스워드 갱신
+    if dist > MAX_dist:
+        MAX_dist = max(dist, MAX_dist)
         password = pw
 
-    elif cnt == MAX_dist and cnt != 0:
+    # 최단거리 동점이면 -> 패스워드끼리 비교해서 더 큰 패스워드를 저장
+    elif dist == MAX_dist and dist != 0:
         password = max(pw, password)
 
 print(password)
