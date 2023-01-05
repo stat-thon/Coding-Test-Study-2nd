@@ -21,3 +21,13 @@ class Solution:
             del word_count[ban]
 
         return word_count.most_common(1)[0][0]
+
+    # Solution
+    def solution(self, paragraph, banned):
+        import re
+        from collections import Counter
+        words = [word for word in re.sub(r'[^\w]', ' ', paragraph) # 정규 표현식으로 전처리한 셈
+        .lower().split() if word not in banned]
+
+        counts = Counter(words)
+        return counts.most_common(1)[0][0]
