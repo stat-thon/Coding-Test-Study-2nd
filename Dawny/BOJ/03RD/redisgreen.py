@@ -1,5 +1,6 @@
 # module
 import sys
+import copy
 from collections import deque
 input2 = sys.stdin.readline
 
@@ -11,46 +12,39 @@ dx = [0, 0, 1, -1]
 dy = [1, -1, 0, 0]
 
 # monitor
-monitor = [list(map(str, input().strip())) for i in range(n)]
-visit = [[0]*n for _ in range(n)]
+monitor = [list(sys.stdin.readline().strip()) for i in range(n)]
+monitor2 = copy.deepcopy(monitor)
+for j in range(n):
+    for k in range(n):
+        if monitor2[j][k] == 'G':
+            monitor2[j][k] = 'R'
 
 
 # bfs
-def bfs(a, b):
-    q = deque([[a, b]])
-    visit[a][b] = 1
-    while q:
-        tmp = q.popleft()
+def bfs(j, k, color, RGB):
+    Q = deque([[j, k]])
+    RGB[j][k] = 'O'
+    while Q:
+        a, b = Q.popleft()
         for i in range(4):
-            x = tmp[0] + dx[i]
-            y = tmp[1] + dy[i]
+            x = a + dx[i]
+            y = b + dy[i]
             if 0 <= x < n and 0 <= y < n:
-                if monitor[x][y] == monitor[a][b] and visit[x][y] == 0:
-                    visit[x][y] = 1
-                    q.append([x, y])
+                if RGB[x][y] == color:
+                    Q.append([x, y])
+                    RGB[x][y] = 'O'
 
 
 # find
 normal = 0
-for j in range(n):
-    for k in range(n):
-        if not visit[j][k]:
-            bfs(j, k)
-            normal += 1
-
-# change this monitor
-for j in range(n):
-    for k in range(n):
-        if monitor[j][k] == 'G':
-            monitor[j][k] = 'R'
-
-# find
 disease = 0
-visit = [[0]*n for _ in range(n)]
 for j in range(n):
     for k in range(n):
-        if not visit[j][k]:
-            bfs(j, k)
+        if monitor[j][k] != 'O':
+            bfs(j, k, monitor[j][k], monitor)
+            normal += 1
+        if monitor2[j][k] != 'O':
+            bfs(j, k, monitor2[j][k], monitor2)
             disease += 1
 
 print(normal, disease)
