@@ -46,7 +46,6 @@ pw = -9999
 # pw_dict = {}
 for i in range(n):
     for j in range(m):
-        MAX = -99999
         visited = [[0]*m for _ in range(n)]
         if graph[i][j]!=0:
             MAX_, end_pw  = bfs(i,j)
