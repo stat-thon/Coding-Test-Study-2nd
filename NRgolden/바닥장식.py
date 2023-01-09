@@ -1,3 +1,12 @@
+n , m = map(int, input().split())
+
+
+graph=[]
+for i in range(n):
+    graph.append(input())
+    
+visited=[[0]*m for _ in range(n)]
+
 def dfs1(x,y):
     
     
@@ -8,7 +17,7 @@ def dfs1(x,y):
     if graph[x][y]=='-':
         if visited[x][y]==0:
             visited[x][y]=1
-            dfs1(x,y-1)
+
             dfs1(x,y+1)
             
             return True
@@ -25,13 +34,14 @@ def dfs2(x,y):
     if graph[x][y]=='|':
         if visited[x][y]==0:
             visited[x][y]=1
-            dfs2(x-1,y)
             dfs2(x+1,y)
             
             return True
 
     return False    
     
+    
+
     
 result = 0
 for i in range(n):
