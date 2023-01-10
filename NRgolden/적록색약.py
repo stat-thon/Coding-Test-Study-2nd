@@ -1,5 +1,8 @@
 from collections import deque
 import sys
+
+
+# 메모 : 34340KB 시간 : 80ms
 input = sys.stdin.readline
 
 n = int(input())
