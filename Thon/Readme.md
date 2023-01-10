@@ -37,6 +37,9 @@
 - DFS
     - 적록색약인 사람, 아닌 사람 용 dfs 두 개로 함수를 나눠서 풀이하니 쉬웠음
     - 단 다른 사람들에 비해 시간이 오래 걸린 편 같아서 하나의 함수로 볼 방법을 생각해보고 싶음.
+![풀이 p.1](https://user-images.githubusercontent.com/69744314/211463439-d3c9abc2-43c5-4420-941e-110e6f6e6cd5.jpg)
+![풀이 p.2](https://user-images.githubusercontent.com/69744314/211463441-ea24a2f3-a6da-4d70-820c-36468a6b86dc.jpg)
+
 ### 3-2. 보물섬
 - BFS
     - 
