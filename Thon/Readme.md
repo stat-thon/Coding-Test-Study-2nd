@@ -54,6 +54,9 @@
     - 너무 쉬워보였는데 백트래킹 원리에 의해 return문이 안 먹어서 매우 당황
     - 하루종일 return을 어떻게 해결해야 되나 머리 싸매다가 안 풀려서 나린이의 sys.exit() 힌트를 받고 해결함.
     - 백트래킹에 대해 더 제대로 이해한 것 같고, sys.exit()의 파괴성도 깨달음
+![풀이 4-1-1](https://user-images.githubusercontent.com/69744314/213415556-ba3ed8f5-9b9d-4673-83bd-e9f9167d498d.jpg)
+![풀이 4-1-2](https://user-images.githubusercontent.com/69744314/213415563-f832bbb0-c358-4f65-8796-601270f51057.jpg)
+
 ### 4-2. 회장뽑기
 - BFS
     -
