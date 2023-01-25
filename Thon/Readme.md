@@ -79,6 +79,12 @@
     - for문 밖에서 현재 물통의 용량을 리스트로 기록한 부분에서 문제 발생 -> 너무 헷갈려서 한 시간동안 고민 -> for문 안에서 후보 리스트를 만드는 방식으로 해결
     - 결국 2시간 만에 해결
 
+![풀이 5-1-1](https://user-images.githubusercontent.com/69744314/214506487-2abcded2-7d1f-4830-854f-e663db939083.jpg)
+![풀이 5-1-2](https://user-images.githubusercontent.com/69744314/214506489-377ac23d-3867-401f-b36a-4dba3997787a.jpg)
+![풀이 5-1-3](https://user-images.githubusercontent.com/69744314/214506471-5ddda4dd-091e-4d70-814c-54fa7501584b.jpg)
+![풀이 5-1-4](https://user-images.githubusercontent.com/69744314/214506484-1e4ac892-92da-4130-843f-daa4337a76b1.jpg)
+![풀이 5-1-5](https://user-images.githubusercontent.com/69744314/214506486-822a28cb-a2fd-4823-8107-b595ffa45c94.jpg)
+
 ### 5-2. 노드사이의 거리
 - BFS
     - 
