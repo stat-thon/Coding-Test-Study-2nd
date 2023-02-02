@@ -13,7 +13,6 @@ for _ in range(m):
 
 
 def bfs(x,d) :
-  global l
   l[1]=0
   q=deque()
   q.append((x,0))
