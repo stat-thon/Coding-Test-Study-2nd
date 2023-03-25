@@ -11,5 +11,4 @@ def solution(board):
                 if maxnum < check[a][b]:
                     maxnum = check[a][b]
                     
-    print(check)
     return maxnum ** 2
