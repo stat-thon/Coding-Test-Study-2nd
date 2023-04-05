@@ -13,5 +13,8 @@ for i in s:
     if ''.join(stack[-n:]) == bomb:
         for _ in range(n):
             stack.pop()
-
-print(''.join(stack))
+            
+if stack:
+    print(''.join(stack))
+else:
+    print('FRULA')
