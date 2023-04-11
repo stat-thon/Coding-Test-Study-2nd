@@ -1,32 +1,29 @@
 from collections import deque
-dq = deque(input())
-stack = []
-result = []
+dq, stack, result = deque(input()), deque(), deque()
 
 while dq:
     q = dq.popleft()
     
     if q == '<':
-        result += stack[::-1]
-        stack = []
-        stack.append(q)
+        result += stack
+        stack = deque(q)
         
         while True:
             nq = dq.popleft()
             stack.append(nq)
+            
             if nq == '>':
                 result += stack
-                stack = []
+                stack = deque()
                 break
                 
     elif q == ' ':
-        result += stack[::-1]
+        result += stack
         result.append(' ')
-        stack = []
+        stack = deque()
         
     else:
-        stack.append(q)
-
-result += stack[::-1]
-
+        stack.appendleft(q)
+        
+result += stack
 print(''.join(result))
